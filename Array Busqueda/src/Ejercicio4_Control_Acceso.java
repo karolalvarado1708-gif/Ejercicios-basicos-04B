@@ -13,7 +13,6 @@ public class Ejercicio4_Control_Acceso {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("--- CONTROL DE ACCESO GIMNASIO ---");
         System.out.print("Ingrese su código: ");
         int codigoBuscado = sc.nextInt();
 
@@ -38,9 +37,9 @@ public class Ejercicio4_Control_Acceso {
         }
 
         if (encontrado) {
-            System.out.println(" Acceso permitido. Bienvenido.");
+            System.out.println(" Acceso permitido. Bienvenido...");
         } else {
-            System.out.println(" Acceso denegado. Pago pendiente.");
+            System.out.println(" Acceso denegado. Pago pendiente...");
         }
 
         sc.close();
