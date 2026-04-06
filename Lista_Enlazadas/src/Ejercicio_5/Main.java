@@ -5,47 +5,57 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Reproductor player = new Reproductor();
+        Cancion player = new Cancion();
         int opcion;
 
         do {
-            System.out.println("\n======================================");
-            System.out.println("   SPOTIFY LITE 🎧");
-            System.out.println("======================================");
+            System.out.println("\n========== REPRODUCTOR ==========");
             System.out.println("1. Agregar canción al final");
-            System.out.println("2. Agregar canción a continuación");
-            System.out.println("3. Mostrar lista");
-            System.out.println("4. Duración total");
+            System.out.println("2. Agregar canción después de la actual");
+            System.out.println("3. Ver lista de reproducción");
+            System.out.println("4. Ver duración total");
             System.out.println("5. Salir");
-            System.out.print("Seleccione opción: ");
+            System.out.print("Elige una opción: ");
 
             opcion = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); 
 
             switch (opcion) {
 
                 case 1:
-                case 2:
                     System.out.print("Título: ");
-                    String titulo = sc.nextLine();
+                    String titulo1 = sc.nextLine();
 
                     System.out.print("Artista: ");
-                    String artista = sc.nextLine();
+                    String artista1 = sc.nextLine();
 
                     System.out.print("Duración (segundos): ");
-                    int duracion = sc.nextInt();
+                    int duracion1 = sc.nextInt();
                     sc.nextLine();
 
                     System.out.print("Género: ");
-                    String genero = sc.nextLine();
+                    String genero1 = sc.nextLine();
 
-                    if (opcion == 1) {
-                        player.agregarAlFinal(titulo, artista, duracion, genero);
-                    } else {
-                        player.agregarSiguiente(titulo, artista, duracion, genero);
-                    }
+                    player.agregarAlFinal(titulo1, artista1, duracion1, genero1);
+                    System.out.println(" Canción agregada al final.");
+                    break;
 
-                    System.out.println(" Canción agregada.");
+                case 2:
+                    System.out.print("Título: ");
+                    String titulo2 = sc.nextLine();
+
+                    System.out.print("Artista: ");
+                    String artista2 = sc.nextLine();
+
+                    System.out.print("Duración (segundos): ");
+                    int duracion2 = sc.nextInt();
+                    sc.nextLine();
+
+                    System.out.print("Género: ");
+                    String genero2 = sc.nextLine();
+
+                    player.agregarSiguiente(titulo2, artista2, duracion2, genero2);
+                    System.out.println(" Canción agregada después de la actual.");
                     break;
 
                 case 3:
@@ -53,7 +63,7 @@ public class Main {
                     break;
 
                 case 4:
-                    player.duracionTotal();
+                    System.out.println("Duración total: " + player.duracionTotal() + " segundos");
                     break;
 
                 case 5:
@@ -61,7 +71,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Opción inválida.");
+                    System.out.println(" Opción inválida.");
             }
 
         } while (opcion != 5);
