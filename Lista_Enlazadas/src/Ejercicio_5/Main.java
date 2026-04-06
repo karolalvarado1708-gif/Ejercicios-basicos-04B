@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Cancion player = new Cancion();
+        Reproductor player = new Reproductor(); 
         int opcion;
 
         do {
@@ -13,12 +13,12 @@ public class Main {
             System.out.println("1. Agregar canción al final");
             System.out.println("2. Agregar canción después de la actual");
             System.out.println("3. Ver lista de reproducción");
-            System.out.println("4. Ver duración total");
+            System.out.println("4. Ver duración total (MM:SS)");
             System.out.println("5. Salir");
             System.out.print("Elige una opción: ");
 
             opcion = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             switch (opcion) {
 
@@ -63,7 +63,7 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Duración total: " + player.duracionTotal() + " segundos");
+                    System.out.println("Duración total: " + player.duracionTotal());
                     break;
 
                 case 5:
