@@ -2,13 +2,8 @@ package Ejercicio_5;
 
 public class Reproductor {
 
-    private Cancion cabeza;
-    private Cancion actual;
-
-    public Reproductor() {
-        cabeza = null;
-        actual = null;
-    }
+    Cancion cabeza;
+    Cancion actual; 
 
     public void agregarAlFinal(String titulo, String artista, int duracion, String genero) {
         Cancion nueva = new Cancion(titulo, artista, duracion, genero);
@@ -17,24 +12,24 @@ public class Reproductor {
             cabeza = nueva;
             actual = nueva;
         } else {
-            Cancion aux = cabeza;
-            while (aux.siguiente != null) {
-                aux = aux.siguiente;
+            Cancion temp = cabeza;
+            while (temp.siguiente != null) {
+                temp = temp.siguiente;
             }
-            aux.siguiente = nueva;
+            temp.siguiente = nueva;
         }
     }
 
     public void agregarSiguiente(String titulo, String artista, int duracion, String genero) {
+        if (actual == null) {
+            System.out.println("No hay canción actual.");
+            return;
+        }
+
         Cancion nueva = new Cancion(titulo, artista, duracion, genero);
 
-        if (actual == null) {
-            cabeza = nueva;
-            actual = nueva;
-        } else {
-            nueva.siguiente = actual.siguiente;
-            actual.siguiente = nueva;
-        }
+        nueva.siguiente = actual.siguiente;
+        actual.siguiente = nueva;
     }
 
     public void mostrarLista() {
@@ -43,29 +38,27 @@ public class Reproductor {
             return;
         }
 
-        Cancion aux = cabeza;
-        int i = 1;
-
-        while (aux != null) {
-            System.out.println(i + "." + aux.titulo + " - " + aux.artista +
-                    " | " + aux.duracionSegundos + "s | " + aux.genero);
-            aux = aux.siguiente;
-            i++;
+        Cancion temp = cabeza;
+        while (temp != null) {
+            System.out.println("🎵 " + temp.titulo + " - " + temp.artista +
+                               " (" + temp.duracionSegundos + "s)");
+            temp = temp.siguiente;
         }
     }
 
-    public String duracionTotal() {
-        int totalSegundos = 0;
-        Cancion aux = cabeza;
+    public void duracionTotal() {
+        int total = 0;
+        Cancion temp = cabeza;
 
-        while (aux != null) {
-            totalSegundos += aux.duracionSegundos;
-            aux = aux.siguiente;
+        while (temp != null) {
+            total += temp.duracionSegundos;
+            temp = temp.siguiente;
         }
 
-        int minutos = totalSegundos / 60;
-        int segundos = totalSegundos % 60;
+        int minutos = total / 60;
+        int segundos = total % 60;
 
-        return String.format("%02d:%02d", minutos, segundos);
+        System.out.println("\n Duración total: " +
+                String.format("%02d:%02d", minutos, segundos));
     }
 }
