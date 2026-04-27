@@ -3,24 +3,22 @@ package Ejercicio_2;
 class Carrusel {
     Anuncio cabeza;
 
-    // Insertar anuncio
     public void agregarAnuncio(String titulo, int duracion, String categoria) {
         Anuncio nuevo = new Anuncio(titulo, duracion, categoria);
 
         if (cabeza == null) {
             cabeza = nuevo;
-            cabeza.siguiente = cabeza; // cerrar ciclo
+            cabeza.siguiente = cabeza; 
         } else {
             Anuncio temp = cabeza;
             while (temp.siguiente != cabeza) {
                 temp = temp.siguiente;
             }
             temp.siguiente = nuevo;
-            nuevo.siguiente = cabeza; // cerrar ciclo
+            nuevo.siguiente = cabeza; 
         }
     }
 
-    // Método principal
     public void reproducir(int ciclos) {
         if (cabeza == null) {
             System.out.println("No hay anuncios.");
