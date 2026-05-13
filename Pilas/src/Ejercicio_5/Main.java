@@ -7,7 +7,6 @@ public class Main {
         PilaEstaciones ruta = new PilaEstaciones();
         Scanner scanner = new Scanner(System.in);
 
-        // Datos de prueba
         ruta.push(new Estacion("Entrada Principal", 0, 20.9));
         ruta.push(new Estacion("Galería Norte", 50, 19.5));
         ruta.push(new Estacion("Pozo Central", 120, 17.8));

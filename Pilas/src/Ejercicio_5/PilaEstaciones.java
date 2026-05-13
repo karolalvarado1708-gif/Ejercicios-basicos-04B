@@ -17,14 +17,12 @@ public class PilaEstaciones {
         return tamanio;
     }
 
-    // PUSH
     public void push(Estacion nueva) {
         nueva.siguiente = tope;
         tope = nueva;
         tamanio++;
     }
 
-    // POP
     public Estacion pop() {
         if (estaVacia()) {
             return null;
@@ -39,12 +37,10 @@ public class PilaEstaciones {
         return aux;
     }
 
-    // PEEK
     public Estacion peek() {
         return tope;
     }
 
-    // IMPRIMIR
     public void imprimir() {
         if (estaVacia()) {
             System.out.println("No hay estaciones registradas.");
@@ -70,10 +66,7 @@ public class PilaEstaciones {
         System.out.println("==========================");
     }
 
-    /**
-     * Desapila todas las estaciones para volver a la superficie.
-     * Si el oxígeno es menor al 18%, muestra alerta.
-     */
+   
     public void retrocederASuperficie() {
 
         if (estaVacia()) {

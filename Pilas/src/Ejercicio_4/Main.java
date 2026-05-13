@@ -7,7 +7,6 @@ public class Main {
         PilaMedicamentos dispensador = new PilaMedicamentos();
         Scanner scanner = new Scanner(System.in);
 
-        // Datos de prueba
         dispensador.push(new Medicamento("Acetaminofén", "LOT-001", 45));
         dispensador.push(new Medicamento("Ibuprofeno", "LOT-002", 30));
         dispensador.push(new Medicamento("Amoxicilina", "LOT-003", 8));

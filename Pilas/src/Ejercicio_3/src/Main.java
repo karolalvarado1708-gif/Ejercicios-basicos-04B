@@ -5,7 +5,6 @@ public class Main {
         PilaCamiones callejon = new PilaCamiones();
         Scanner scanner = new Scanner(System.in);
 
-        // Datos de prueba
         callejon.push(new Camion("ABC-123", "Carlos Pérez", 12.5));
         callejon.push(new Camion("DEF-456", "María Gómez", 8.3));
         callejon.push(new Camion("GHI-789", "Juan Torres", 15.0));

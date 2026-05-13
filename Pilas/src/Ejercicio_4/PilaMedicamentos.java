@@ -17,14 +17,12 @@ public class PilaMedicamentos {
         return tamanio;
     }
 
-    // PUSH
     public void push(Medicamento nuevo) {
         nuevo.siguiente = tope;
         tope = nuevo;
         tamanio++;
     }
 
-    // POP
     public Medicamento pop() {
         if (estaVacia()) {
             return null;
@@ -39,12 +37,10 @@ public class PilaMedicamentos {
         return aux;
     }
 
-    // PEEK
     public Medicamento peek() {
         return tope;
     }
 
-    // IMPRIMIR
     public void imprimir() {
         if (estaVacia()) {
             System.out.println("El dispensador está vacío.");
@@ -70,13 +66,6 @@ public class PilaMedicamentos {
         System.out.println("===================================");
     }
 
-    /**
-     * Revisa el tope.
-     * Si el medicamento tiene menos de 10 días para vencer,
-     * lo retira automáticamente y revisa el siguiente.
-     *
-     * Cuando encuentra un medicamento seguro, también lo despacha.
-     */
     public Medicamento validarDespacho() {
 
         while (!estaVacia()) {
@@ -94,10 +83,7 @@ public class PilaMedicamentos {
         return null;
     }
 
-    /**
-     * Variante para solo validar el tope sin despachar
-     * el medicamento seguro.
-     */
+
     public Medicamento validarDespachoSinRetirarSeguro() {
 
         while (!estaVacia()) {

@@ -16,7 +16,6 @@ public class PilaCamiones {
         return tamanio;
     }
 
-    // PUSH
     public void push(Camion nuevo) {
 
         nuevo.siguiente = tope;

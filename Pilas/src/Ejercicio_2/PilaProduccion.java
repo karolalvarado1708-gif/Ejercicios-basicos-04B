@@ -68,20 +68,17 @@ public class PilaProduccion {
 
         while (tope != null) {
 
-            // Si encuentra pieza defectuosa
             if (tope.esDefectuosa) {
 
                 System.out.println("¡¡PIEZA DEFECTUOSA ENCONTRADA!!");
                 System.out.println("Pieza defectuosa: " + tope);
 
-                // También se retira la pieza defectuosa
                 pop();
 
                 System.out.println("Producción detenida.");
                 return;
             }
 
-            // Retirar piezas buenas antes del defecto
             Pieza retirada = pop();
 
             System.out.println("Pieza buena descartada: "

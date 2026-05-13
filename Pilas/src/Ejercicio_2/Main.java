@@ -5,7 +5,6 @@ public class Main {
         PilaProduccion linea = new PilaProduccion();
         Scanner scanner = new Scanner(System.in);
 
-        // Datos de prueba
         linea.push(new Pieza("Pistón", "SER-001", false));
         linea.push(new Pieza("Biela", "SER-002", false));
         linea.push(new Pieza("Cigüeñal", "SER-003", false));
